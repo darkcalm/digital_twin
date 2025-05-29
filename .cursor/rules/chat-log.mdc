@@ -1,0 +1,74 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Chat Log Format Rules
+
+## Purpose
+This document defines the format and rules for exporting chat logs.
+
+## Format Requirements
+
+### Basic Structure
+- Each chat log should be saved as a markdown file with `.log` extension
+- File should be placed in the `chats` directory
+- Filename should follow the pattern `session-{number}.log`
+
+### Content Requirements
+1. Header
+   - Start with a title indicating the session number and main topic
+   - Example: `# Session {number}: {Main Topic}`
+
+2. Message Format
+   - Each message should be clearly labeled as either "User:" or "Assistant:"
+   - Messages should be preserved in chronological order
+   - Include the complete conversation, word by word
+   - Preserve all code blocks, file paths, and technical details
+
+3. Tool Calls
+   - Include tool calls and their results when relevant to the conversation
+   - Skip detailed runtime output (e.g., terminal responses) unless specifically relevant
+   - Format tool calls as code blocks with appropriate language tags
+
+4. File References
+   - Preserve all file references using the @ symbol
+   - Include full file paths when referenced
+
+5. Code Changes
+   - Include all code changes discussed
+   - Format code blocks with appropriate language tags
+   - Preserve file paths and line numbers when relevant
+
+### Example Format
+```markdown
+# Session {number}: {Main Topic}
+
+## Initial Request
+User: [Complete user message]
+
+## Assistant Response
+[Complete assistant response including any tool calls]
+
+## User Response
+[Complete user message]
+
+## Assistant Response
+[Complete assistant response including any tool calls]
+
+[Continue with full conversation...]
+```
+
+## Guidelines
+1. Do not summarize or condense the conversation
+2. Preserve all technical details and context
+3. Include all file references and code changes
+4. Skip only non-essential runtime details
+5. Maintain chronological order of the conversation
+6. Use clear section headers to separate different parts of the conversation
+
+## Notes
+- If timestamps are not available, focus on maintaining the chronological order
+- Ensure all code blocks are properly formatted with language tags
+- Preserve all file paths and references using the @ symbol
+- Include all tool calls and their results when relevant to the conversation flow
